@@ -1,0 +1,16 @@
+<nav class="navbar navbar-light bg-light d-flex justify-content-between">
+  <span class="navbar-text">
+    CHEZ YANNOU
+  </span>
+  <div>
+  <i class="fa-solid fa-backward"></i>
+  <%= link_to "Back To Lists", lists_path, class: "btn btn-primary"  %>
+  </div>
+</nav>
+  <div id="new">
+    <h1>🧻🧻New List🧻🧻</h1>
+    <%= simple_form_for(@list) do |f| %>
+      <%= f.input :name %>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+  </div>
