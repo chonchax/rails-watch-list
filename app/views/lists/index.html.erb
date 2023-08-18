@@ -1,15 +1,25 @@
-<nav class="navbar navbar-light bg-light d-flex justify-content-between">
-  <span class="navbar-text">
-    Chez YANNOU
-  </span>
-  <div>
-  <i class="fa-solid fa-backward"></i>
-  <%= link_to "New List", new_list_path, class: "btn btn-primary" %>
+
+<div class="banner" style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=asset_path("ciné.jpg")%>)';>
+  <div class="container text-center">
+    <h1>Save Any <strong>Kind</strong> Of <strong>Movies</strong>!</h1>
   </div>
-</nav>
+</div>
 
 
-  <h1>hello there</h1>
+<div class="container mt-5">
+  <h1>My Lists</h1>
+</div>
+
+  <%# <%= link_to 'TARASBATARD', taras_path %>
+
+<div class="cards">
   <% @lists.each do |list| %>
-  <p><%= link_to list.name, list_path(list) %></p>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=asset_path("Screen_Shot_2021_03_22_at_10.54.39_AM.jpg")%>)";>
+    <%= link_to list.name, list_path(list)%>
+    </div>
   <% end %>
+</div>
+
+
+    <%# <%= link_to list.name, list_path(list) %> -
+    <%# <%= link_to "Delete",list_path(list), data: {turbo_method: :delete, turbo_confirm: "Delete #{list.name}?"} %>
